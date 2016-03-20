@@ -8,7 +8,7 @@ var mongoClient = mongo.MongoClient;
 app.set('view engine','ejs');
 var mongodb;
 app.use( express.static( "public" ) );
-mongoClient.connect('mongodb://localhost:27017/hospital',function(err,db){
+mongoClient.connect('mongodb://Vishwajeet:cyzehoc4@ds053448.mlab.com:53448/hospital',function(err,db){
   mongodb = db;
 });
 app.use(function(req,res,next){
@@ -50,7 +50,7 @@ router.post('/docCheckInOut',function(req,res){
 
   var collection = req.db.collection('docCollection');
   collection.findOne({'name': req.body.name},function(err,data){
-    if(data.present===true){
+    if(true){
       collection.updateOne({'name': req.body.name},{'present': false},function(err,data){});
       res.render('docCheckIn',{'name': req.body.name,'check': 'out'});
     } else{
