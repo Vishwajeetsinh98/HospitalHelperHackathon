@@ -1,0 +1,277 @@
+<html>
+
+<head>
+	<title>
+			Hospital Helper
+	</title>
+<style>
+
+</style>
+<meta name="viewport" height=device-height width=device-width initialscale="1">
+</head>
+
+<!--Initialising css folders-->
+<script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/materialize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!--Initialising javascript folders-->
+<script src="js/smoothscroll.js"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
+<script src="js/materialize.min.1.js"></script>
+<script src="js/materialize.min.js"></script>
+
+<body>
+	<div id="nav" class="navbar-fixed">
+		<nav class="red lighten-1 z-depth-1">
+	    <div class="nav-wrapper">
+				<div class="row">
+					<div class="white-text" style="font-size:35px">
+							<img class="col s1" src="images/hospital.png" style="margin-left: 20; margin-top:10; height: 50px; width: 70px; border-radius: 50%" >
+						<div class="col s8 m6 l5">
+							<a id="homepointer" href="#">Hospital Helper</a></div>
+			  	</div>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a id="Aboutpointer" href="#AboutUs">About Us</a></li>
+        <li><a id="Doctorpointer" href="#Doctors">Doctors</a></li>
+				<li><a id="Patientpointer" href="#Admit">Patient</a></li>
+        <li><a id="Regpointer" href="#Regdoc">Register Doctor</a></li>
+				<li><a id="CheckDoc" href="#checkdoc">Doctor Check-in/Checkout</a></li>
+      </ul>
+			</div>
+		</nav>
+	</div>
+
+	<section id="hospital_img">
+		<div id="main" class="main" style="-webkit-filter: brightness(0.5);background-image:url(images/HEALTHCARE.jpg); height:600; background-size: 100% ">
+
+			<div class="container center" style="padding:6%; height:75%" >
+				<div class="col s12 m12 l12">
+
+					<h2 class="header" style="margin-top:300"><span style="color: black">Because Lives Matter</span></h1><br>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="AboutUs">
+	<div style="padding:1%;background-color:#5c6bc0;height:700" class="z-depth-1">
+		<div class="container center">
+			<br><br>
+			<h1 class="header center"><span style="color:white">ABOUT US</span></h1>
+			<div class="row">
+				<div class="col s12 m4 l4">
+				 <div class="card">
+					 <div class="card-image">
+						 <img src="images/card.jpg">
+					 </div>
+					 <div class="card-content">
+						 <p><strong>Vishwajeet And Jaimin</strong><br>Two passionate web developers set to change the world.
+							 <br><a href="https://github.com/Vishwajeetsinh98" target="_blank">Github Handle</a>
+							 <br><a href="mailto:hospitalhelper@gmail.com" target="_blank">Email Us</a>
+						 </p>
+					 </div>
+
+				 </div>
+			 </div>
+			 <div class="col s12 m8 l8" style="padding-top:4%">
+				 <p style="color:white" align="left">
+The Hospital Helper is a framework which helps the hospitals manage their patient and doctor directories.
+And thus makes up for robust hospitalisation.<br><br>
+
+				 </p>
+
+			 </div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="Doctors">
+	<div style="padding:1%;background-image:url(images/finddoc.jpg); background-repeat: no-repeat; background-size: 100%; height:700; background-size: 100% height:600" class="z-depth-1">
+		<div class="container center">
+			<br><br><br><br><br><br>
+			<h1 class="header center"><span style="color:black">Find Doctors</span></h1>
+			<br>
+			<form autocomplete="off" method="post" action="http://localhost:5000/findDoc">
+				<div class="row">
+					<div class="input-field col s10 offset-s1">
+						<input name="speciality" type="radio" id="service" class="with-gap validate" checked>
+						<label for="service" style="color: black">Eye Doctor</label>
+
+						<input name="speciality" type="radio" id="service6" class="with-gap validate" >
+						<label for="service6" style="color: black">Neurosurgeon</label>
+
+						<input name="speciality" type="radio" id="service7" class="with-gap validate" >
+						<label for="service7" style="color: black">Orthopaediatrician</label>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<button class="btn large waves-effect waves-light col s2 offset-s5" type="submit" name="action">Submit
+						<i class="material-icons right">send</i>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
+<section id="Admit">
+	<div class="row">
+<div>
+	<div style="padding:1%;background-color:#81d4fa;height:700;" class="z-depth-1 valign-wrapper">
+		<p class="valign" style="margin-left: 35%;font-size: 30px;font-weight: bold">
+			<%= name %><br>Successfully Admitted Under<br>Dr. <%=doc%>
+		</p>
+	</div>
+
+</div>
+</section>
+
+<section id="Regdoc">
+	<div style="padding:1%;background-image:url(images/doc.jpg); background-repeat: no-repeat; background-size: 100%;background-color:#e1f5fe;height:700" class="z-depth-1">
+		<div class="container center">
+			<br>
+			<h1 class="header center"><span style="color:black">Register Doctor</span></h1>
+			<form autocomplete="off" method="post" action="http://localhost:5000/regDoc">
+				<div class="row">
+					<div class="input-field col s10 offset-s1">
+						<input name="user" type="text" id="user" class="validate" >
+						<label for="user">User</label>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="input-field col s10 offset-s1">
+						<input name="pwd" type="password" id="psd" class="validate" >
+						<label for="psd">Password</label>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="input-field col s10 offset-s1">
+						<input name="name" type="text" id="name" class="validate" >
+						<label for="name">Doctor Name</label>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="input-field col s10 offset-s1">
+						<p>Speciality:</p>
+						<input name="speciality" type="radio" id="service" class="with-gap validate" checked>
+						<label for="service" style="color: black">Eye Doctor</label>
+
+						<input name="speciality" type="radio" id="service4" class="with-gap validate" >
+						<label for="service4" style="color: black">Neurosurgeon</label>
+
+						<input name="speciality" type="radio" id="service5" class="with-gap validate" >
+						<label for="service5" style="color: black">Orthopaediatrician</label>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<button class="btn large waves-effect waves-light col s2 offset-s5" type="submit" name="action">Submit
+						<i class="material-icons right">send</i>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
+<section id="checkdoc">
+	<div style="padding:1%;background-color:#e1f5fe;height:700" class="z-depth-1">
+		<div class="container center">
+			<br><br><br><br><br><br>
+			<h1 class="header center"><span style="color:black">Doctor Checkin/Checkout</span></h1>
+			<form autocomplete="off" method="post" action="http://localhost:5000/docCheckInOut">
+				<div class="row">
+					<div class="input-field col s10 offset-s1">
+						<input name="name" type="text" id="name" class="validate" >
+						<label for="name">Doctor Name</label>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<button class="btn large waves-effect waves-light col s2 offset-s5" type="submit" name="action">Submit
+						<i class="material-icons right">send</i>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
+<footer class="page-footer red">
+          <div class="container">
+
+          <div class="">
+            <div class="container center" style="color:white; padding-bottom: 10px;">
+            	&copy Copyright Vishwajeet-Jaimin
+            </div>
+          </div>
+</footer>
+
+<script type="text/javascript">
+$('#homepointer').on('click', function() {
+	$.smoothScroll({
+		scrollElement: $('body'),
+		scrollTarget: '#'
+	});
+	return false;
+});
+</script>
+
+<script type="text/javascript">
+$('#Aboutpointer').on('click', function() {
+	$.smoothScroll({
+		scrollElement: $('body'),
+		scrollTarget: '#AboutUs'
+	});
+	return false;
+});
+</script>
+
+<script type="text/javascript">
+$('#Doctorpointer').on('click', function() {
+	$.smoothScroll({
+		scrollElement: $('body'),
+		scrollTarget: '#Doctors'
+	});
+	return false;
+});
+</script>
+
+<script type="text/javascript">
+$('#Patientpointer').on('click', function() {
+	$.smoothScroll({
+		scrollElement: $('body'),
+		scrollTarget: '#Admit'
+	});
+	return false;
+});
+</script>
+
+<script type="text/javascript">
+$('#Regpointer').on('click', function() {
+	$.smoothScroll({
+		scrollElement: $('body'),
+		scrollTarget: '#Regdoc'
+	});
+	return false;
+});
+</script>
+
+<script type="text/javascript">
+$('#CheckDoc').on('click', function() {
+	$.smoothScroll({
+		scrollElement: $('body'),
+		scrollTarget: '#checkdoc'
+	});
+	return false;
+});
+</script>
+
+</body>
